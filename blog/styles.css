@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, hsl(291, 20%, 13%), #f792bc);
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px; /* Width of the sidebar navigation */
+    height: 100vh; /* Make the navigation bar as tall as the screen */
+    background-color: #f792bc9f; /* Semi-transparent background color */
+    border-right: 1px solid hsl(291, 20%, 13%); /* Gold line on the right */
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    transition: width 0.3s; /* Add transition for smooth expansion */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.nav-text {
+    transform: rotate(-90deg); /* Rotate the text sideways */
+    white-space: nowrap; /* Prevent text from wrapping */
+    color: hsl(291, 20%, 13%); /* Text color */
+    font-weight: bold;
+    font-size: 25px; /* Adjust the font size as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center; /* Vertically center text */
+    z-index: 1; /* Place it in front of the gold bar */
+    transition: transform 0.3s, opacity 0.3s; /* Transitions for moving text and opacity */
+}
+
+/* Reduce opacity to fade out on hover */
+nav:hover .nav-text {
+    transform: translateX(-100px) rotate(-90deg); /* Move the text back to its original position */
+    opacity: 0; /* Reduce opacity to fade out on hover */
+}
+nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px; /* Width of the gold bar */
+    height: 100%; /* Make the gold bar as tall as the screen */
+    background-color: #f792bc; /* Set the background color to gold */
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
+    z-index: 1; /* Place it behind the navigation links */
+    transition: transform 0.3s; /* Add transition for smooth transformation */
+}
+
+nav:hover {
+    width: 300px; /* Sidebar expands to 300px width on hover */
+}
+
+nav:hover::before {
+    transform: translateX(-100px); /* Move the gold bar back to its original position */
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points for the list items */
+    padding: 0;
+}
+
+nav li {
+    padding: 0; /* Remove padding for list items */
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Add transition for smooth hover effect */
+    color: white; /* Set the link color */
+    padding: 20px; /* Add padding for spacing and full height */
+    position: relative; /* Position relative for shadow */
+    text-align: center; /* Center-align the link text */
+    flex-grow: 1; /* Allow links to evenly distribute vertical space */
+    display: flex; /* Make links flex containers */
+    align-items: center; /* Vertically center content within links */
+}
+
+/* Add shadow to the bottom of each link on hover */
+nav a:hover {
+    background-color: white; /* Background color on hover */
+    color: hsl(291, 20%, 13%); /* Text color on hover */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+}
+
+main {
+    padding-left: 300px; /* Adjust the padding to create space for the expanded sidebar */
+    flex-grow: 1; /* Allow main content to grow and fill available space */
+}
+
+article {
+    padding: 20px;
+    background-color: #f792bc;
+    color: hsl(291, 20%, 13%);
+    border: 1px solid hsl(291, 20%, 13%);
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    margin-top: 0;
+}
+
+main p {
+    margin-bottom: 20px;
+}
