@@ -118,47 +118,39 @@ main p {
 
 
 /* Styles for Mobile and small devices */
+
+/* Media query for mobile devices */
 @media (max-width: 768px) {
     nav {
-        width: 100%; /* Full width navigation bar */
-        height: auto; /* Adjust height to fit content */
-        position: relative; /* No fixed position on mobile */
+        width: 100%; /* Make the nav full width on mobile */
+        height: auto; /* Adjust height to content */
+        position: relative; /* Change position if needed */
     }
 
     .nav-text {
-        transform: rotate(0deg); /* Normal text orientation */
-        position: relative; /* Change position */
-        text-align: center; /* Center text */
-        padding: 10px; /* Add some padding */
-        display: block; /* Use block display */
-        background-color: #f792bc; /* Background color for the navigation text */
-        margin-bottom: 10px; /* Add margin below the navigation text */
+        transform: none;
+        position: static; /* Reset the position */
+        text-align: center; /* Center the text */
+        opacity: 1; /* Make sure it's fully visible */
     }
 
     nav ul {
-        display: flex; /* Display links in a row */
-        flex-direction: row; /* Arrange items in a row */
-        justify-content: center; /* Center items in the nav */
-        padding-bottom: 10px; /* Add padding to the bottom of the nav */
+        padding: 0;
+        display: block; /* Stack links vertically */
     }
 
     nav li {
-        margin: 0 10px; /* Add margin between navigation items */
+        text-align: center; /* Center list items */
+    }
+
+    nav a {
+        padding: 10px; /* Adjust padding as needed */
+        display: block; /* Ensure links take full width */
     }
 
     main {
-        padding-left: 0; /* Remove padding for main content */
+        padding-left: 0; /* Remove left padding on mobile */
     }
 
-    .nav-link {
-        padding: 10px; /* Reduce padding for mobile links */
-    }
-
-    /* Adjust article styles for mobile */
-    article {
-        margin: 10px;
-        padding: 10px;
-    }
+    /* Any other styles that need to be overridden for mobile */
 }
-
-/* You can add additional media queries for other screen sizes if necessary */
